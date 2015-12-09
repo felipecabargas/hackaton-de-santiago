@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fundations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Country</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fundations.each do |fundation| %>
+      <tr>
+        <td><%= fundation.name %></td>
+        <td><%= fundation.website %></td>
+        <td><%= fundation.country %></td>
+        <td><%= fundation.age %></td>
+        <td><%= link_to 'Show', fundation %></td>
+        <td><%= link_to 'Edit', edit_fundation_path(fundation) %></td>
+        <td><%= link_to 'Destroy', fundation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fundation', new_fundation_path %>

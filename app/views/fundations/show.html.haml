@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @fundation.name
+%p
+  %strong Website:
+  = @fundation.website
+%p
+  %strong Country:
+  = @fundation.country
+%p
+  %strong Age:
+  = @fundation.age
+= link_to 'Edit', edit_fundation_path(@fundation)
+|
+\#{link_to 'Back', fundations_path}
+
+
+-@dogs.each do |d|
+  %h3
+    =d.name
+  %h5
+    =d.age
+  %h5
+    = image_tag d.avatar.url(:medium)

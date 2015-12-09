@@ -1,0 +1,4 @@
+.top-bar
+  .top-bar-left
+    -if current_user != nil
+      = link_to('Logout', destroy_user_session_path, :method => :delete)
